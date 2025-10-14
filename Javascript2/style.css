@@ -1,0 +1,105 @@
+/* Joey Dixon 10/14/25 */
+
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #F5F5DC;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Chicle', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  color: #3b2e1a;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8rem;
+  line-height: 1.1;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #3b2e1a;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0 3rem;
+  line-height: 1.3;
+  border-radius: 1rem;
+  color: #3b2e1a;
+}
+
+button {
+  background: #c6762c;
+  color: #fff;
+  font-family: 'Chicle', cursive;
+  font-size: 2.2rem;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  margin-bottom: 3rem;
+}
+
+button:hover {
+  background: #a85f24;
+  transform: scale(1.05);
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background: #e7d7a8;
+  border: 6px solid #3b2e1a;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url('dirt.svg') bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url('mole.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s ease-out;
+}
+
+.hole.up .mole {
+  top: 0;
+}
